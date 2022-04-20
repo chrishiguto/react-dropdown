@@ -11,7 +11,8 @@
     "test:watch": "jest --watch --maxWorkers=25%",
     "test:ci": "jest --runInBand",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=69e19546ab79"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.5",
