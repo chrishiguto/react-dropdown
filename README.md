@@ -3,7 +3,7 @@
 This is a basic React Dropdown component, created to experiment and test stuff.
 It's built using [Popper.js](https://popper.js.org/), a positioning engine third-party library. Menu items can be either a Button or a Link and supports both HTML attributes.
 
-You can check out [Storybook Demo](https://google.com) if you don't want to clone the project!
+You can check out [Storybook Demo](https://6260324579fad5003a1d99dd-ivupbxebvl.chromatic.com/) if you don't want to clone the project!
 
 ## Accessibility
 
