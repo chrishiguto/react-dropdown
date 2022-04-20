@@ -32,7 +32,7 @@ export const DropdownItem = ({
   }
 
   return (
-    <S.Wrapper onClick={handleClick} {...props}>
+    <S.Wrapper tabIndex={0} onClick={handleClick} {...props}>
       {children}
     </S.Wrapper>
   )
