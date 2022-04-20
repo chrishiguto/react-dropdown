@@ -18,15 +18,18 @@ export const DropdownMenu = ({ children }: DropdownMenuProps) => {
     hideMenu
   } = useDropdown()
 
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      hideMenu()
+      buttonRef?.current?.focus()
+    }
+  }
+
   const handleClickOutside = useCallback(
     (e: any) => {
-      const hasPopperRef = !!popperRef?.current
-      const hasButtonRef = !!buttonRef?.current
       const clickedOutsideDropdown =
-        hasPopperRef &&
-        hasButtonRef &&
-        !popperRef.current.contains(e.target) &&
-        !buttonRef.current.contains(e.target)
+        !popperRef?.current?.contains(e.target) &&
+        !buttonRef?.current?.contains(e.target)
 
       if (clickedOutsideDropdown) {
         hideMenu()
@@ -42,7 +45,12 @@ export const DropdownMenu = ({ children }: DropdownMenuProps) => {
   }, [handleClickOutside])
 
   return (
-    <div ref={popperRef} style={popperStyles.popper} {...popperAttrs.popper}>
+    <div
+      onKeyDown={handleKeyPress}
+      ref={popperRef}
+      style={popperStyles.popper}
+      {...popperAttrs.popper}
+    >
       <S.Wrapper aria-hidden={!isMenuOpen} show={isMenuOpen}>
         <div
           ref={(ref) => setArrowRef(ref)}
