@@ -22,9 +22,8 @@ export const Wrapper = styled.div<WrapperProps>`
     background-color: ${theme.colors.black700};
     width: max-content;
     opacity: 0;
-    transition: transform ${theme.transition.default}, opacity ${
-    theme.transition.default;
-  };
+    transition: transform ${theme.transition.default},
+      opacity ${theme.transition.default};
 
     ${show && wrapperModifiers.open()}
     ${!show && wrapperModifiers.close()}
